@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mslearn111121-524d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mslearn111121-524d"
+  template:
+    metadata:
+      labels:
+        app: "mslearn111121-524d"
+    spec:
+      containers:
+        - name: "mslearn111121-524d"
+          image: "fahaddemo.azurecr.io/mslearn111121"
+          ports:
+          - containerPort: 80
